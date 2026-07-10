@@ -1,14 +1,22 @@
-Source: lingmo-texteditor
-Section: devel
+﻿Source: lingmo-texteditor
+Section: utils
 Priority: optional
-Maintainer: LingmoOS Packaging Team <lingmo@lingmo.org>
-Build-Depends: cmake,
-               debhelper (>= 9),
-	           libkf5syntaxhighlighting-dev
-Standards-Version: 4.5.0
-Homepage: https://github.com/LingmoOS/lingmo-texteditor
+Maintainer: Lingmo OS Team <team@lingmo.org>
+Build-Depends:
+    cmake (>= 3.20),
+    debhelper-compat (= 13),
+    pkg-config,
+    qt6-base-dev (>= 6.5),
+    qt6-declarative-dev,
+    qt6-base-dev, qt6-declarative-dev,
+Standards-Version: 4.6.2
+Homepage: https://github.com/lingmo-os/lingmo-texteditor
+Rules-Requires-Root: no
 
 Package: lingmo-texteditor
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: LingmoOS Texteditor
+Depends:
+    ,
+    ,
+Description: Lingmo Text Editor
+ Lingmo Desktop Lingmo Text Editor.
