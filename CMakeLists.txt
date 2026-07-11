@@ -15,7 +15,7 @@ set(QT Core Gui Quick QuickControls2 LinguistTools)
 find_package(Qt6 REQUIRED ${QT})
 
 find_package(Qt6 COMPONENTS Core Widgets Quick REQUIRED)
-find_package(KF6SyntaxHighlighting REQUIRED)
+find_package(KF6SyntaxHighlighting QUIET)
 
 set(PROJECT_SOURCES
         src/main.cpp
@@ -34,8 +34,12 @@ target_link_libraries(lingmo-texteditor
   Qt6::Core
   Qt6::Widgets
   Qt6::Quick
-  KF6::SyntaxHighlighting
   )
+
+if(KF6SyntaxHighlighting_FOUND)
+    target_link_libraries(lingmo-texteditor PRIVATE KF6::SyntaxHighlighting)
+    target_compile_definitions(lingmo-texteditor PRIVATE HAVE_SYNTAX_HIGHLIGHTING)
+endif()
 
 file(GLOB TS_FILES translations/*.ts)
 foreach(filepath ${TS_FILES})
