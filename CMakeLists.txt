@@ -1,4 +1,4 @@
-﻿cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.20)
 
 project(lingmo-texteditor VERSION 1.0.0 DESCRIPTION "Lingmo Text Editor" LANGUAGES CXX)
 
@@ -15,7 +15,7 @@ set(QT Core Gui Quick QuickControls2 LinguistTools)
 find_package(Qt6 REQUIRED ${QT})
 
 find_package(Qt6 COMPONENTS Core Widgets Quick REQUIRED)
-find_package(KF5SyntaxHighlighting)
+find_package(KF6SyntaxHighlighting REQUIRED)
 
 set(PROJECT_SOURCES
         src/main.cpp
